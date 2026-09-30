@@ -1,0 +1,27 @@
+{
+  "deployment": {
+    "serviceName": "Payment Service",
+    "version": "2.4.0",
+    "environment": "Production",
+    "status": "SUCCESS"
+  },
+  "stages": [
+    {
+      "name": "Build",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "Test",
+      "status": "SUCCESS"
+    },
+    {
+      "name": "Deploy",
+      "status": "SUCCESS"
+    }
+  ],
+  "validation": {
+    "status": "PASS",
+    "decision": "ALLOW",
+    "findings": 0
+  }
+}
