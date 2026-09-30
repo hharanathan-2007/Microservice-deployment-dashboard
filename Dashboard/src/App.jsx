@@ -1,122 +1,76 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <div className="dashboard">
+      <header className="header">
+        <h1>Microservice Deployment Dashboard</h1>
+        <p>Deployment monitoring and validation overview</p>
+      </header>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
+      <section className="summary">
+        <div className="card">
+          <h3>Total Deployments</h3>
+          <h2>12</h2>
         </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+
+        <div className="card">
+          <h3>Successful</h3>
+          <h2>8</h2>
+        </div>
+
+        <div className="card">
+          <h3>Failed</h3>
+          <h2>2</h2>
+        </div>
+
+        <div className="card">
+          <h3>Running</h3>
+          <h2>2</h2>
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <section className="deployment-card">
+        <h2>Latest Deployment</h2>
+
+        <div className="deployment-info">
+          <p><strong>Service:</strong> Payment Service</p>
+          <p><strong>Version:</strong> 2.4.0</p>
+          <p><strong>Environment:</strong> Production</p>
+          <p><strong>Status:</strong> SUCCESS</p>
+        </div>
+
+        <h3>Deployment Stages</h3>
+
+        <div className="stages">
+          <div className="stage success">
+            <strong>✓ Build</strong>
+            <span>SUCCESS</span>
+          </div>
+
+          <div className="stage success">
+            <strong>✓ Test</strong>
+            <span>SUCCESS</span>
+          </div>
+
+          <div className="stage success">
+            <strong>✓ Deploy</strong>
+            <span>SUCCESS</span>
+          </div>
+        </div>
+      </section>
+
+      <section className="deployment-card">
+        <h2>Validation Results</h2>
+
+        <div className="validation">
+          <p><strong>Validation:</strong> PASS</p>
+          <p><strong>Decision:</strong> ALLOW</p>
+          <p><strong>Findings:</strong> 0</p>
+        </div>
+      </section>
+    </div>
+  );
 }
 
-export default App
+export default App;
